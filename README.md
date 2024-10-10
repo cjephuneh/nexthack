@@ -1,49 +1,13 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Contributing to NextHack 🚀
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-
-# Contributing to **NextHack** 🚀
-
-We’re thrilled you want to contribute to **NextHack**! Your input helps make the platform better for everyone. To keep things organized and ensure smooth collaboration, please follow the guidelines below. 💡
+We're thrilled you want to contribute to NextHack! Your input helps make the platform better for everyone. To keep things organized and ensure smooth collaboration, please follow the guidelines below. 💡
 
 ## Code of Conduct 📜
+
 We expect all contributors to follow our [Code of Conduct](link-to-code-of-conduct). Let's foster a positive environment where everyone feels welcome. 🤝
 
 ## How to Contribute 🛠️
+
 You can contribute in many ways:
 - 🐞 Report bugs
 - 💡 Suggest new features
@@ -62,6 +26,7 @@ You can contribute in many ways:
 | 5️⃣   | Wait for review and respond to feedback. |
 
 ## Issues 🐛
+
 When submitting an issue, follow these steps:
 1. Search the [existing issues](link-to-issues) to avoid duplicates 🔍.
 2. Create a new issue if none exists, and provide:
@@ -70,7 +35,8 @@ When submitting an issue, follow these steps:
     - Expected vs actual behavior 🧐
 
 ## Pull Requests (PRs) 📬
-Here’s how to submit a PR for the **NextHack** repo:
+
+Here's how to submit a PR for the NextHack repo:
 - Fork the repo, and create a branch for your work (e.g., `feature-add-xyz`).
 - Stick to our coding standards (see below) to ensure consistency.
 - Add tests for new functionality and ensure existing tests pass.
@@ -79,7 +45,8 @@ Here’s how to submit a PR for the **NextHack** repo:
   - Write a detailed description explaining your changes. 📄
 
 ### PR Checklist 🔖
-Please make sure you’ve covered all items:
+
+Please make sure you've covered all items:
 - [ ] Does your code follow the project style guide?
 - [ ] Have you tested the code and ensured it works?
 - [ ] Is your PR description clear and detailed?
@@ -87,6 +54,7 @@ Please make sure you’ve covered all items:
 - [ ] Did you add or update the tests?
 
 ## Coding Standards 🖥️
+
 Ensure your code follows these guidelines:
 - 📏 **Consistent Formatting** – Stick to the [Style Guide] (e.g., Airbnb's JavaScript style, PEP8 for Python).
 - 📚 **Document Your Code** – Add comments where necessary to explain complex logic.
@@ -103,17 +71,31 @@ Ensure your code follows these guidelines:
 To run the project locally, clone the repo and follow the steps above. ⚙️
 
 ## Suggesting Features 💡
-We’re always open to feature suggestions! Before submitting one:
-1. Check the [issues](link-to-issues) section to ensure it hasn’t been requested.
-2. If it’s new, create an issue with details on the feature and its potential benefits.
+
+We're always open to feature suggestions! Before submitting one:
+1. Check the [issues](link-to-issues) section to ensure it hasn't been requested.
+2. If it's new, create an issue with details on the feature and its potential benefits.
 3. Engage in discussions, and be ready for feedback!
 
 ## Interactive TODOs 📝
-When contributing to **NextHack**, you may encounter TODO comments in the code. Feel free to tackle them and submit a PR.
 
-Here’s an example of what to look for:
+When contributing to NextHack, you may encounter TODO comments in the code. Feel free to tackle them and submit a PR.
+
+Here's an example of what to look for:
 ```js
 // TODO: Improve performance of this function
 function slowFunction() {
   // code...
 }
+```
+**Pro Tip:** Check the [Issues Board](link-to-issues) for open TODOs!
+
+## Documentation 📚
+
+We always appreciate improvements to our docs. If you spot a typo or want to improve an explanation, feel free to:
+- Open an issue 🐞.
+- Or directly submit a PR with your changes 💡.
+
+---
+
+**Thank you for contributing to NextHack! Together, we can make this platform the best place to discover hackathons worldwide 🌍.**
