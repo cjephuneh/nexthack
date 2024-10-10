@@ -13,11 +13,10 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { CalendarDays, MapPin, Users, Search, Star } from "lucide-react"
+import {  MapPin, Users, Search, Star } from "lucide-react"
 
 export default function HackathonsPage() {
   const [searchTerm, setSearchTerm] = useState('')

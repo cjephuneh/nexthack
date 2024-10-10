@@ -24,12 +24,12 @@ export default function Signup() {
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault()
-    // Here you would typically send the form data to your backend
-    console.log("Form data to be submitted:", { ...formData, userType })
-    // Redirect to the appropriate dashboard or show a success message
-  }
+//   const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
+//     e.preventDefault()
+//     // Here you would typically send the form data to your backend
+//     console.log("Form data to be submitted:", { ...formData, userType })
+//     // Redirect to the appropriate dashboard or show a success message
+//   }
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-purple-900 to-black text-white">
