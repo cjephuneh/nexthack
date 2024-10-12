@@ -9,6 +9,8 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Star } from "lucide-react"
+import { useRouter } from 'next/navigation'
+import { toast } from 'react-hot-toast' // Import toast
 
 export default function Signup() {
   const [userType, setUserType] = useState('participant')
@@ -18,18 +20,53 @@ export default function Signup() {
     password: '',
     confirmPassword: '',
   })
+  const router = useRouter()
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
-//   const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
-//     e.preventDefault()
-//     // Here you would typically send the form data to your backend
-//     console.log("Form data to be submitted:", { ...formData, userType })
-//     // Redirect to the appropriate dashboard or show a success message
-//   }
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/register`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        password: formData.password,
+        role: userType, // Use userType for role
+      }),
+    })
+
+    if (response.ok) {
+      const data = await response.json()
+      console.log("User registered successfully:", data)
+      toast.success("Registration successful!"); // Show success toast
+
+      // Store the token in localStorage
+      if (data.token) { // Assuming the token is returned in the response
+        localStorage.setItem('authToken', data.token); // Store the token
+      } else {
+        console.error("Token is missing in the response"); // Handle missing token
+        toast.error("Registration failed: Token is missing in the response"); // Show error toast
+        return;
+      }
+
+      // Redirect based on user type
+      if (userType === 'organizer') {
+        router.push('/organiser'); // Redirect to organizer dashboard
+      } else {
+        router.push('/participants'); // Redirect to participant dashboard
+      }
+    } else {
+      console.error("Registration failed:", response.statusText)
+      toast.error("Registration failed: " + response.statusText); // Show error toast
+    }
+  }
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-purple-900 to-black text-white">
@@ -48,12 +85,12 @@ export default function Signup() {
         >
           <Card className="bg-purple-800/50 border-purple-700">
             <CardHeader>
-              <CardTitle>Sign Up for HackHub</CardTitle>
+              <CardTitle>Sign Up for NextHack</CardTitle>
               <CardDescription>Join the community of innovators and creators</CardDescription>
             </CardHeader>
             <CardContent>
-              {/* <form onSubmit={handleSubmit} className="space-y-4"> */}
-              <form  className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
+              {/* <form  className="space-y-4"> */}
 
                 <div className="space-y-2">
                   <Label htmlFor="name">Name</Label>
@@ -91,18 +128,6 @@ export default function Signup() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="confirmPassword">Confirm Password</Label>
-                  <Input
-                    id="confirmPassword"
-                    name="confirmPassword"
-                    type="password"
-                    value={formData.confirmPassword}
-                    onChange={handleInputChange}
-                    className="bg-white/10 border-white/20 text-white"
-                    required
-                  />
-                </div>
-                <div className="space-y-2">
                   <Label>I am a:</Label>
                   <RadioGroup defaultValue="participant" onValueChange={setUserType}>
                     <div className="flex items-center space-x-2">
@@ -123,7 +148,7 @@ export default function Signup() {
             <CardFooter>
               <p className="text-sm text-center w-full">
                 Already have an account?{" "}
-                <Link href="/auth/login" className="text-yellow-400 hover:underline">
+                <Link href="/signin" className="text-yellow-400 hover:underline">
                   Log in
                 </Link>
               </p>

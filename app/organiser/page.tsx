@@ -34,7 +34,7 @@ export default function OrganizerDashboard() {
         <div className="max-w-6xl mx-auto space-y-8">
           <div className="flex justify-between items-center">
             <h1 className="text-3xl font-bold">Organizer Dashboard</h1>
-            <Link href="/organizer/create-hackathon">
+            <Link href="/organiser/create-hackathon">
               <Button className="bg-yellow-400 text-black hover:bg-yellow-500">
                 <PlusCircle className="mr-2 h-4 w-4" /> Create New Hackathon
               </Button>
